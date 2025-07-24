@@ -1,0 +1,28 @@
+{
+  "name": "cse341-learning-academy",
+  "version": "1.0.0",
+  "description": "Learning Academy API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ezgdev/cse341-learning-academy.git"
+  },
+  "author": "Ezequiel Gimenez, Marcos dos Santos, Carlos Medina, Ibraim Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ezgdev/cse341-learning-academy/issues"
+  },
+  "homepage": "https://github.com/ezgdev/cse341-learning-academy#readme",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "mongodb": "^6.18.0",
+    "nodemon": "^3.1.10",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
