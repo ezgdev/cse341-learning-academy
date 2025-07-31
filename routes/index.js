@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 router.use('/', require('./swagger'));
 router.use('/student', require('./student'));
-// router.use('/instructor', require('./instructor'));
+router.use('/instructor', require('./instructor'));
 // router.use('/course', require('./course'));
 // router.use('/enrollment', require('./enrollment'));
 
