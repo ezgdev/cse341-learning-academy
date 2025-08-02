@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const studentController = require("../controllers/studentController");
+const validation = require("../utilities/student-validation");
 
 // Define routes for student operations
 router.get("/",
@@ -13,11 +14,15 @@ router.get(
 );
 
 router.post("/",
+    validation.addStudentRules(),
+    validation.addStudentValidation,
     studentController.createStudent
 );
 
 router.put(
     "/:id",
+    validation.addStudentRules(),
+    validation.addStudentValidation,
     studentController.updateStudent
 );
 
