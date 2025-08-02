@@ -4,11 +4,15 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req,res) => {
     //#swagger.tags = ['Courses']
     try {
-        const lists = await mongodb.getDb().db().colletion('courses').find().toArray();
+        const result = await mongodb.getDb().db().collection('courses').find();
+        const courses = await result.toArray();
+    
         res.setHeader('Content-Type', 'application/json');
-    } catch (error) {
-        res.status(500).json({message: error.message});
-    }
+        res.status(200).json(courses);
+      } catch (error) {
+        console.error("Error getting all students:", error);
+        res.status(500).json({ message: 'Error retrieving students', error: error.message });
+      }
 };
 
 

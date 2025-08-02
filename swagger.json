@@ -5,35 +5,12 @@
     "description": "API for managing task",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-learning-academy.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "Home"
-        ],
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/student/": {
       "get": {
         "tags": [
