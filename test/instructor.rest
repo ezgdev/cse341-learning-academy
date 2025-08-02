@@ -27,4 +27,4 @@ content-type: application/json
 }
 
 ### DELETE instructor
-DELETE http://localhost:3000/instructor/68882f9b81a46581d5d8b762 HTTP/1.1
+DELETE http://localhost:3000/instructor/688e624d3d912d87235b0d73 HTTP/1.1

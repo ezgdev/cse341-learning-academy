@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "To-Do List API",
+    "title": "Learning Academy API",
     "description": "API for managing task",
     "version": "1.0.0"
   },
