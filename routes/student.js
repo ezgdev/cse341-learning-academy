@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const studentController = require("../controllers/studentController");
 const validation = require("../utilities/student-validation");
+const { isAuthenticated } = require('../middleware/authenticate');
 
 // Define routes for student operations
 router.get("/",
@@ -14,6 +15,7 @@ router.get(
 );
 
 router.post("/",
+    isAuthenticated,
     validation.addStudentRules(),
     validation.addStudentValidation,
     studentController.createStudent
@@ -21,6 +23,7 @@ router.post("/",
 
 router.put(
     "/:id",
+    isAuthenticated,
     validation.addStudentRules(),
     validation.addStudentValidation,
     studentController.updateStudent
@@ -28,6 +31,7 @@ router.put(
 
 router.delete(
     "/:id",
+    isAuthenticated,
     studentController.deleteStudent
 );
 
