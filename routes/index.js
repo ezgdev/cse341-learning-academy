@@ -5,7 +5,7 @@ router.use('/', require('./swagger'));
 router.use('/student', require('./student'));
 router.use('/instructor', require('./instructor'));
 router.use('/course', require('./course'));
-// router.use('/enrollment', require('./enrollment'));
+router.use('/enrollment', require('./enrollment'));
 
 // login and logout routes
 router.get('/login', passport.authenticate('github'), (req, res) => {});

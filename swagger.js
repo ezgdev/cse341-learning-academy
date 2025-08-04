@@ -2,7 +2,7 @@ const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    title: "To-Do List API",
+    title: "Learning Academy API",
     description: "API for managing task",
   },
   host: "localhost:3000",

@@ -11,18 +11,71 @@
     "https"
   ],
   "paths": {
+    "/login": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Home"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/student/": {
       "get": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "200": { "description": "OK" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "post": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "description": "",
         "parameters": [
           {
@@ -31,92 +84,188 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "dateOfBirth": { "example": "any" },
-                "phone": { "example": "any" },
-                "address": { "example": "any" },
-                "registrationDate": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "dateOfBirth": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "registrationDate": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "201": { "description": "Created" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
     "/student/{id}": {
       "get": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "put": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "dateOfBirth": { "example": "any" },
-                "phone": { "example": "any" },
-                "address": { "example": "any" },
-                "registrationDate": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "dateOfBirth": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                },
+                "registrationDate": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "delete": {
-        "tags": ["Students"],
+        "tags": [
+          "Students"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
     "/instructor/": {
       "get": {
-        "tags": ["Instructors"],
+        "tags": [
+          "Instructors"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "200": { "description": "OK" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "post": {
-        "tags": ["Instructors"],
+        "tags": [
+          "Instructors"
+        ],
         "description": "",
         "parameters": [
           {
@@ -125,77 +274,153 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "specialty": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "specialty": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "201": { "description": "Created" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
     "/instructor/{id}": {
       "get": {
-        "tags": ["Instructors"],
+        "tags": [
+          "Instructors"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "put": {
-        "tags": ["Instructors"],
+        "tags": [
+          "Instructors"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "specialty": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "specialty": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "delete": {
-        "tags": ["Instructors"],
+        "tags": [
+          "Instructors"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
     "/course/": {
       "post": {
-        "tags": ["Courses"],
+        "tags": [
+          "Courses"
+        ],
         "description": "",
         "parameters": [
           {
@@ -204,87 +429,168 @@
             "schema": {
               "type": "object",
               "properties": {
-                "title": { "example": "any" },
-                "description": { "example": "any" },
-                "level": { "example": "any" },
-                "durationWeeks": { "example": "any" },
-                "instructorId": { "example": "any" }
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "level": {
+                  "example": "any"
+                },
+                "durationWeeks": {
+                  "example": "any"
+                },
+                "instructorId": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "201": { "description": "Created" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "get": {
-        "tags": ["Courses"],
+        "tags": [
+          "Courses"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "responses": {
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
     "/course/{id}": {
       "get": {
-        "tags": ["Courses"],
+        "tags": [
+          "Courses"
+        ],
         "description": "",
-        "produces": ["application/json"],
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "400": { "description": "Bad Request" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "put": {
-        "tags": ["Courses"],
+        "tags": [
+          "Courses"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "title": { "example": "any" },
-                "description": { "example": "any" },
-                "level": { "example": "any" },
-                "durationWeeks": { "example": "any" },
-                "instructorId": { "example": "any" }
+                "title": {
+                  "example": "any"
+                },
+                "description": {
+                  "example": "any"
+                },
+                "level": {
+                  "example": "any"
+                },
+                "durationWeeks": {
+                  "example": "any"
+                },
+                "instructorId": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "204": { "description": "No Content" },
-          "422": { "description": "Unprocessable Entity" },
-          "500": { "description": "Internal Server Error" }
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "delete": {
-        "tags": ["Courses"],
+        "tags": [
+          "Courses"
+        ],
         "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "204": { "description": "No Content" },
-          "500": { "description": "Internal Server Error" }
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-
-    "/enrollments": {
+    "/enrollment/": {
       "post": {
-        "tags": ["Enrollments"],
-        "description": "Enroll a student in a course",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -292,82 +598,131 @@
             "schema": {
               "type": "object",
               "properties": {
-                "studentId": { "example": "student_id_here" },
-                "courseId": { "example": "course_id_here" }
+                "studentId": {
+                  "example": "any"
+                },
+                "courseId": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "201": { "description": "Enrollment created" },
-          "400": { "description": "Bad Request" },
-          "500": { "description": "Internal Server Error" }
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-    "/enrollments/{id}": {
+    "/enrollment/{id}": {
       "delete": {
-        "tags": ["Enrollments"],
-        "description": "Drop a course (Student/Admin only)",
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "Enrollment deleted" },
-          "404": { "description": "Enrollment not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-    "/enrollments/student/{id}": {
+    "/enrollment/student/{id}": {
       "get": {
-        "tags": ["Enrollments"],
-        "description": "Get all enrollments for a student",
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "Enrollments retrieved" },
-          "404": { "description": "Student not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-    "/enrollments/course/{id}": {
+    "/enrollment/course/{id}": {
       "get": {
-        "tags": ["Enrollments"],
-        "description": "Get all students enrolled in a course",
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "Enrollments retrieved" },
-          "404": { "description": "Course not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-    "/enrollments/{id}/progress": {
+    "/enrollment/{id}/progress": {
       "patch": {
-        "tags": ["Enrollments"],
-        "description": "Update course progress (e.g., mark as completed)",
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "progress": { "example": "completed" }
+                "progress": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "200": { "description": "Progress updated" },
-          "404": { "description": "Enrollment not found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     }
