@@ -5,8 +5,8 @@ const doc = {
     title: "Learning Academy API",
     description: "API for managing task",
   },
-  host: "localhost:3000",
-  schemes: ["http"],
+  host: "cse341-learning-academy.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger.json";
