@@ -1,0 +1,32 @@
+### GET all students
+GET https://cse341-learning-academy.onrender.com/student    
+
+### GET student by id
+GET https://cse341-learning-academy.onrender.com/student/68882f1f81a46581d5d8b760
+
+### CREATE student
+POST https://cse341-learning-academy.onrender.com/student HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Ezequiel",
+    "lastName": "González",
+    "email": "test@test.com",
+    "dateOfBirth": "1990-01-01",    
+    "enrollmentDate": "2023-01-01"
+}
+
+### UPDATE student
+PUT https://cse341-learning-academy.onrender.com/student/68882f1f81a46581d5d8b760 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Ezequiel",
+    "lastName": "González",
+    "email": "test@test.com",
+    "dateOfBirth": "1990-01-01",    
+    "enrollmentDate": "2023-01-01"
+}
+
+### DELETE student
+DELETE https://cse341-learning-academy.onrender.com/student/688e64ef87ad9fdbfc7677a1 HTTP/1.1

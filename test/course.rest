@@ -1,0 +1,32 @@
+### GET all courses
+GET https://cse341-learning-academy.onrender.com/course
+
+### GET course by id
+GET https://cse341-learning-academy.onrender.com/course/68882fe181a46581d5d8b767
+
+### CREATE course
+POST https://cse341-learning-academy.onrender.com/course HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Advanced JavaScript",
+    "description": "Deep dive into JavaScript concepts and best practices.",
+    "level": "advanced",
+    "durationWeeks": 6,
+    "instructorId": "68882f9b81a46581d5d8b762"
+}
+
+### UPDATE course
+PUT https://cse341-learning-academy.onrender.com/course/68882fe181a46581d5d8b767 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Advanced JavaScript Programming",
+    "description": "In-depth exploration of JavaScript programming techniques.",
+    "level": "advanced",
+    "durationWeeks": 8,
+    "instructorId": "68882f9b81a46581d5d8b762"
+}
+
+### DELETE course
+DELETE https://cse341-learning-academy.onrender.com/course/688e683187ad9fdbfc7677a3 HTTP/1.1

@@ -1,5 +1,5 @@
 ### Enroll a student in a course
-POST http://localhost:3000/api/enrollments
+POST https://cse341-learning-academy.onrender.com/enrollment
 Content-Type: application/json
 
 {
@@ -10,22 +10,22 @@ Content-Type: application/json
 ###
 
 ### Drop a course
-DELETE http://localhost:3000/api/enrollments/64d2f1bc9a7a4e001e9a1c33
+DELETE https://cse341-learning-academy.onrender.com/enrollment/64d2f1bc9a7a4e001e9a1c33
 
 ###
 
 ### Get all enrollments for a student
-GET http://localhost:3000/api/enrollments/student/64d2f1bc9a7a4e001e9a1a11
+GET https://cse341-learning-academy.onrender.com/enrollment/student/68882f1f81a46581d5d8b760
 
 ###
 
 ### Get all students enrolled in a course
-GET http://localhost:3000/api/enrollments/course/64d2f1bc9a7a4e001e9a1b22
+GET https://cse341-learning-academy.onrender.com/enrollment/course/64d2f1bc9a7a4e001e9a1b22
 
 ###
 
 ### Update course progress
-PATCH http://localhost:3000/api/enrollments/64d2f1bc9a7a4e001e9a1c33/progress
+PUT https://cse341-learning-academy.onrender.com/enrollment/68914f29b0e99c1556ead1c3/progress
 Content-Type: application/json
 
 {
