@@ -22,7 +22,7 @@ router.post("/",
 
 router.put("/:id/progress",
     isAuthenticated,
-    validate.addEnrollmentRules(),
+    validate.updateProgressRules(),
     validate.addEnrollmentValidation,
     enrollmentController.updateEnrollmentProgress
 );

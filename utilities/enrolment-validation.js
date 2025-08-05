@@ -12,18 +12,19 @@ validate.addEnrollmentRules = () => {
             .trim()
             .escape()
             .notEmpty().withMessage('Course ID cannot be empty'),
-        body('progress')
+    ];
+}
+
+validate.updateProgressRules = () => {
+    return [
+            body('progress')
             .trim()
             .escape()
             .notEmpty().withMessage('Progress cannot be empty')
             .isIn(['enrolled', 'completed', 'dropped']).withMessage('Status must be one of: enrolled, completed, dropped'),
-        body('enrolledAt')
-            .trim()
-            .escape()
-            .isDate().withMessage('Enrolment date must be a valid date'),
-        
     ];
 }
+
 
 validate.addEnrollmentValidation = (req, res, next) => {
     const errors = validationResult(req);
