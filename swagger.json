@@ -588,8 +588,59 @@
         }
       }
     },
+    "/enrollment/student/{id}": {
+      "get": {
+        "tags": [
+          "Enrollments"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/enrollment/course/{id}": {
+      "get": {
+        "tags": [
+          "Enrollments"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/enrollment/": {
       "post": {
+        "tags": [
+          "Enrollments"
+        ],
         "description": "",
         "parameters": [
           {
@@ -623,6 +674,9 @@
     },
     "/enrollment/{id}": {
       "delete": {
+        "tags": [
+          "Enrollments"
+        ],
         "description": "",
         "parameters": [
           {
@@ -645,50 +699,11 @@
         }
       }
     },
-    "/enrollment/student/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/enrollment/course/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
     "/enrollment/{id}/progress": {
-      "patch": {
+      "put": {
+        "tags": [
+          "Enrollments"
+        ],
         "description": "",
         "parameters": [
           {

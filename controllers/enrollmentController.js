@@ -1,16 +1,16 @@
 const { ObjectId } = require("mongodb");
-const { getDb } = require("../data/database");
+const mongodb = require('../data/database');
 
 // POST /api/enrollments
 const enrollStudent = async (req, res) => {
+  //#swagger.tags = ['Enrollments']
   const { studentId, courseId } = req.body;
   if (!studentId || !courseId) {
     return res.status(400).json({ error: "studentId and courseId are required" });
   }
 
   try {
-    const db = getDb();
-    const result = await db.collection("enrollments").insertOne({
+    const result = await mongodb.getDb().db().collection("enrollments").insertOne({
       studentId: new ObjectId(studentId),
       courseId: new ObjectId(courseId),
       progress: "enrolled",
@@ -24,10 +24,10 @@ const enrollStudent = async (req, res) => {
 
 // DELETE /api/enrollments/:id
 const dropEnrollment = async (req, res) => {
+  //#swagger.tags = ['Enrollments']
   const { id } = req.params;
   try {
-    const db = getDb();
-    const result = await db.collection("enrollments").deleteOne({ _id: new ObjectId(id) });
+    const result = await mongodb.getDb().db().collection("enrollments").deleteOne({ _id: new ObjectId(id) });
     result.deletedCount === 1
       ? res.status(200).json({ message: "Enrollment deleted" })
       : res.status(404).json({ error: "Enrollment not found" });
@@ -38,10 +38,11 @@ const dropEnrollment = async (req, res) => {
 
 // GET /api/enrollments/student/:id
 const getEnrollmentsByStudent = async (req, res) => {
+  //#swagger.tags = ['Enrollments']
   const { id } = req.params;
   try {
-    const db = getDb();
-    const enrollments = await db
+    
+    const enrollments = await mongodb.getDb().db()
       .collection("enrollments")
       .find({ studentId: new ObjectId(id) })
       .toArray();
@@ -53,10 +54,11 @@ const getEnrollmentsByStudent = async (req, res) => {
 
 // GET /api/enrollments/course/:id
 const getEnrollmentsByCourse = async (req, res) => {
+  //#swagger.tags = ['Enrollments']
   const { id } = req.params;
   try {
-    const db = getDb();
-    const enrollments = await db
+    
+    const enrollments = await mongodb.getDb().db()
       .collection("enrollments")
       .find({ courseId: new ObjectId(id) })
       .toArray();
@@ -68,6 +70,7 @@ const getEnrollmentsByCourse = async (req, res) => {
 
 // PATCH /api/enrollments/:id/progress
 const updateEnrollmentProgress = async (req, res) => {
+  //#swagger.tags = ['Enrollments']
   const { id } = req.params;
   const { progress } = req.body;
 
@@ -76,8 +79,8 @@ const updateEnrollmentProgress = async (req, res) => {
   }
 
   try {
-    const db = getDb();
-    const result = await db.collection("enrollments").updateOne(
+    
+    const result = await mongodb.getDb().db().collection("enrollments").updateOne(
       { _id: new ObjectId(id) },
       { $set: { progress } }
     );
