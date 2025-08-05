@@ -29,8 +29,6 @@ router.put("/:id/progress",
 
 router.delete("/:id",
     isAuthenticated,
-    validate.addEnrollmentRules(),
-    validate.addEnrollmentValidation,
     enrollmentController.dropEnrollment
 );
 
