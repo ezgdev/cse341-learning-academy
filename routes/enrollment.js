@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const validate = require("../utilities/enrolment-validation");
 const enrollmentController = require("../controllers/enrollmentController");
 const { isAuthenticated } = require('../middleware/authenticate');
 
@@ -14,16 +15,22 @@ router.get("/course/:id",
 
 router.post("/",
     isAuthenticated,
+    validate.addEnrollmentRules(),
+    validate.addEnrollmentValidation,
     enrollmentController.enrollStudent
 );
 
 router.put("/:id/progress",
     isAuthenticated,
+    validate.addEnrollmentRules(),
+    validate.addEnrollmentValidation,
     enrollmentController.updateEnrollmentProgress
 );
 
 router.delete("/:id",
     isAuthenticated,
+    validate.addEnrollmentRules(),
+    validate.addEnrollmentValidation,
     enrollmentController.dropEnrollment
 );
 
