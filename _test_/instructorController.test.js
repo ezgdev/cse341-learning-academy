@@ -1,9 +1,6 @@
 const {
   getAllInstructors,
-  getInstructorById,
-  createInstructor,
-  updateInstructor,
-  deleteInstructor
+  getInstructorById
 } = require('../controllers/instructorController');
 
 const mongodb = require('../data/database');
