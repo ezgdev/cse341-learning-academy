@@ -25,6 +25,10 @@ const getById = async (req, res) => {
     try {
         const courseId = new ObjectId(req.params.id);
         const course = await mongodb.getDb().db().collection('courses').findOne({ _id: courseId });
+
+        if (!course) {
+          return res.status(404).json({ message: 'Course not found' });
+        }
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(course);
     } catch (error) {
